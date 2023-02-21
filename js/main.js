@@ -16,8 +16,14 @@ window.onload = function (e) {
     fontWeight.style.color = "#4F7942";
     article.style.fontWeight = "700";
   }
-  fontSize.innerHTML = window.localStorage.getItem("fontSize");
-  article.style.fontSize = window.localStorage.getItem("fontSize") + "px";
+  if (window.localStorage.getItem("fontSize")) {
+    fontSize.innerHTML = window.localStorage.getItem("fontSize");
+    article.style.fontSize = window.localStorage.getItem("fontSize") + "px";
+  } else {
+    fontSize.innerHTML = 16;
+    article.style.fontSize = "16px";
+  }
+
   smallerThan(minus);
   biggertThan(plus);
   if (window.localStorage.getItem("fontFamily")) {
